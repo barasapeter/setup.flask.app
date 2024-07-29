@@ -1,7 +1,4 @@
-# setup.flask.app
-This repo holds script to automate setting up a flask multifile application.
-
-# Flask App Structure Generator
+# Multiline flask app CLI initiator
 
 This utility is a Python script that automatically generates a basic Flask application structure with predefined files and directories. It sets up a modular Flask application with blueprints, configurations, and essential files to kickstart your Flask project.
 
