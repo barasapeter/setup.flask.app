@@ -292,13 +292,11 @@ def main() -> None:
             print('Overwriting the folder...')
             shutil.rmtree(folder_name)
             create_flask_app_structure(folder_name)
-            clear_setup()
         else:
             print('Operation aborted. Please choose a different folder name.')
             sys.exit(1)
     else:
         create_flask_app_structure(folder_name)
-        clear_setup()
 
 if __name__ == "__main__":
     main()
