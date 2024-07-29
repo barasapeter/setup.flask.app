@@ -277,8 +277,6 @@ def create_flask_app_structure(base_dir: str) -> None:
     create_files(base_dir)
     print(f"Flask app structure created successfully in '{base_dir}'!")
 
-def clear_setup():
-    """Deletes the setup repository"""
     
 def main() -> None:
     """Main function to run the script."""
@@ -288,17 +286,27 @@ def main() -> None:
     
     folder_name = sys.argv[1]
 
+    def clear_setup():
+        """Deletes the setup repository"""
+        current_dir = os.getcwd()
+        os.rename(current_dir, folder_name)
+        import shutil
+        shutil.rmtree('.git')
+        [os.remove(file) for file in ['README.md', __file__, 'tests.py']]
+
     if os.path.exists(folder_name):
         response = input('The folder already exists. Overwrite? (Y/n): ').lower()
         if response in ['y', '']:
             print('Overwriting the folder...')
             shutil.rmtree(folder_name)
             create_flask_app_structure(folder_name)
+            clear_setup()
         else:
             print('Operation aborted. Please choose a different folder name.')
             sys.exit(1)
     else:
         create_flask_app_structure(folder_name)
+        clear_setup()
 
 if __name__ == "__main__":
     main()
