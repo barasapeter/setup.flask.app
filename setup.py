@@ -278,7 +278,7 @@ def create_flask_app_structure(base_dir: str) -> None:
     print(f"Flask app structure created successfully in '{base_dir}'!")
 
 def clear_setup():
-    pass
+    """Deletes the setup repository"""
     
 def main() -> None:
     """Main function to run the script."""
