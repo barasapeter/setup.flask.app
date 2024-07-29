@@ -1,9 +1,6 @@
 # setup.flask.app
 This repo holds script to automate setting up a flask multifile application.
 
-
-Certainly! I'll create a README file that explains this utility and how to use it. Here's the content for your README.md file:
-
 ```markdown
 # Flask App Structure Generator
 
@@ -105,5 +102,3 @@ You can modify the `flask_app_generator.py` script to add or remove files, chang
 
 This project is open-source and available under the MIT License.
 ```
-
-This README provides a comprehensive guide on what the utility does, how to use it, and what to do after generating the Flask application structure. You can save this content as `README.md` in the same directory as your `flask_app_generator.py` script.
