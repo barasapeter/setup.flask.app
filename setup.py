@@ -286,14 +286,6 @@ def main() -> None:
     
     folder_name = sys.argv[1]
 
-    def clear_setup():
-        """Deletes the setup repository"""
-        current_dir = os.getcwd()
-        os.rename(current_dir, folder_name)
-        import shutil
-        shutil.rmtree('.git')
-        # [os.remove(file) for file in ['README.md', __file__, 'tests.py']]
-
     if os.path.exists(folder_name):
         response = input('The folder already exists. Overwrite? (Y/n): ').lower()
         if response in ['y', '']:
