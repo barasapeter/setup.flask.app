@@ -18,14 +18,14 @@ This utility is a Python script that automatically generates a basic Flask appli
 
 ## Usage
 
-1. Save the script as `flask_app_generator.py` (or any preferred name).
+1. Save the script as `setup.py` (or any preferred name).
 
 2. Open a terminal and navigate to the directory containing the script.
 
 3. Run the script with the desired project folder name as an argument:
 
    ```
-   python flask_app_generator.py <project_folder_name>
+   python setup.py <project_folder_name>
    ```
 
    Replace `<project_folder_name>` with your desired project name.
@@ -92,7 +92,7 @@ After generating the structure:
 
 ## Customization
 
-You can modify the `flask_app_generator.py` script to add or remove files, change the content of generated files, or adjust the directory structure to better suit your needs.
+You can modify the `setup.py` script to add or remove files, change the content of generated files, or adjust the directory structure to better suit your needs.
 
 ## License
 
