@@ -18,7 +18,7 @@ This utility is a Python script that automatically generates a basic Flask appli
 
 ## Usage
 
-1. Save the script as `setup.py` (or any preferred name).
+1. Download the script as `setup.py` (or any preferred name).
 
 2. Open a terminal and navigate to the directory containing the script.
 
