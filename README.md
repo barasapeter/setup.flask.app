@@ -1,99 +1,77 @@
-# Multiline flask app CLI initiator
+# Flask App Structure Template
 
-This utility is a Python script that automatically generates a basic Flask application structure with predefined files and directories. It sets up a modular Flask application with blueprints, configurations, and essential files to kickstart your Flask project.
+This bad boy creates for you a template to start creating modular && maintainable flask applications...
 
-## Features
-
-- Creates a complete Flask application structure
-- Sets up blueprints for main application and API
-- Includes configuration files for different environments (development, testing, production)
-- Adds basic templates and static files
-- Includes a sample database model and migration setup
-- Provides a basic test structure
-
-## Requirements
-
-- Python 3.x
-- pip (Python package installer)
-
-## Usage
-
-1. Download the script as `setup.py` (or any preferred name).
-
-2. Open a terminal and navigate to the directory containing the script.
-
-3. Run the script with the desired project folder name as an argument:
-
-   ```
-   python setup.py <project_folder_name>
-   ```
-
-   Replace `<project_folder_name>` with your desired project name.
-
-4. If the folder already exists, you'll be prompted to overwrite it. Enter 'Y' or press Enter to overwrite, or 'N' to abort.
-
-5. The script will create the Flask application structure in the specified folder.
-
-## Generated Structure
-
-The script generates the following structure:
+## File structure
 
 ```
-<project_folder_name>/
-├── app/
-│   ├── __init__.py
-│   ├── main/
+/project
+├── /app
+│   ├── /api                    # RESTful API routes
+│   │   ├── __init__.py
+│   │   └── /v1                 # API versioning
+│   │       ├── __init__.py
+│   │       ├── routes.py
+│   │       ├── controllers.py
+│   │       └── services.py
+│   ├── /main                   # Web UI routes
 │   │   ├── __init__.py
 │   │   └── views.py
-│   ├── api/
+│   ├── /models                 # Database models
 │   │   ├── __init__.py
-│   │   └── routes.py
-│   ├── templates/
-│   │   └── index.html
-│   ├── static/
-│   │   └── style.css
-│   ├── models.py
-│   └── extensions.py
-├── migrations/
-│   └── README
-├── tests/
-│   └── test_basics.py
-├── config.py
-├── requirements.txt
-└── script.py
+│   │   ├── user.py
+│   │   └── transaction.py
+│   ├── /services              # Business logic
+│   │   ├── __init__.py
+│   │   ├── user_service.py
+│   │   └── transaction_service.py
+│   ├── /repositories         # Data access layer
+│   │   ├── __init__.py
+│   │   ├── user_repository.py
+│   │   └── transaction_repository.py
+│   ├── /utils               # Helpers, utilities
+│   │   ├── __init__.py
+│   │   ├── validators.py
+│   │   └── helpers.py
+│   ├── /extensions         # Flask extensions setup
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   └── auth.py
+│   ├── /config            # Configuration management
+│   │   ├── __init__.py
+│   │   └── config.py
+│   └── __init__.py        # App factory
+│
+├── /migrations           # Flask-Migrate database migrations
+├── /tests               # Unit and integration tests
+├── /static              # Static files (CSS, JS, images)
+├── /templates           # Jinja2 templates for web
+├── requirements.txt     # Python dependencies
+├── config.py            # App configurations
+├── wsgi.py             # Entry point for WSGI servers
+├── manage.py           # Script for running commands
+└── README.md           # Documentation
 ```
 
-## Next Steps
+## File system
 
-After generating the structure:
+### Core app (`/app`)
+- **api**: RESTful API endpoints with versioning support
+- **main**: Web interface routes and views
+- **models**: Database model definitions
+- **services**: Business logic implementation
+- **repositories**: Data access layer for database operations
+- **utils**: Helper functions and utilities
+- **extensions**: Flask extension configurations
+- **config**: Application configuration management
 
-1. Navigate to your project folder:
-   ```
-   cd <project_folder_name>
-   ```
-
-2. Create a virtual environment (optional but recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-4. Run the application:
-   ```
-   python script.py
-   ```
-
-5. Start building your Flask application by adding routes, models, and templates as needed.
-
-## Customization
-
-You can modify the `setup.py` script to add or remove files, change the content of generated files, or adjust the directory structure to better suit your needs.
-
-## License
-
-This project is open-source and available under the MIT License.
+### Dev support modules
+- **migrations**: Database migration scripts
+- **tests**: Application test suite
+- **static**: Static asset files
+- **templates**: HTML templates
+- **requirements.txt**: Project dependencies
+- **config.py**: Configuration settings
+- **wsgi.py**: WSGI server entry point
+- **manage.py**: Management commands
+- **README.md**: Project documentation
